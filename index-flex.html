@@ -3,9 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Semantic Flex</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container > div {
+            font-size: large;
+            width: 600px;
+            height: 150px;
+            border: 1px solid black;
+            align-content: center;
+            text-align: center;
+        }
+        .container > .midsect {
+            width: 600px;
+            height: 300px;
+            display: flex;
+            flex-direction: row;
+        }
+        .vert {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-grow: 3;
+        }
+        .vert > div {
+            display: flex;
+            width: 100%;
+            height: 50%;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid black;
+        }
+        .midsect > div:last-child {
+            display: flex;
+            flex-grow: 2;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <div>&lt;header&gt;</div>
+        <div>&lt;nav&gt;</div>
+        <div class="midsect">
+            <div class="vert">
+                <div>&lt;section&gt;</div>
+                <div>&lt;section&gt;</div>
+            </div>
+            <div>&lt;aside&gt;</div>
+        </div>
+        <div>&lt;footer&gt;</div>
+    </div>
 </body>
 </html>
